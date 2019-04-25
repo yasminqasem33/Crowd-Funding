@@ -1,1 +1,75 @@
-{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="createProject.css">
+        <title>Create Project</title>
+    </head>
+    <body>
+      <div class="cont">
+        <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+            <div class="col-25">
+                <label for="donate">Donate:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="donate" name="donate" placeholder="Your donation..">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="rate">Your rating</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="rating" name="rating" placeholder="Your rating..">
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-25">
+                <label for="comment">Comment</label>
+            </div>
+            <div class="col-75">
+                <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+            </div>
+            <div class="row">
+            <input type="submit" value="Submit">
+            </div>
+        </form>
+
+           <!--End of the form-->
+           <button class="cancel">CancelProject</button>
+
+           <!--div href start-->
+           <div class="links">
+             <a href="#" class="report">Report project</a>
+             <a href="#">Report comment</a>
+           </div>
+        </div>
+
+
+        <!--display data div-->
+        <div class="display">
+          <div class="pt">
+            <label for="project_title">Project title:</label>
+            <p>First project</p>
+
+           <label for="details">Details:</label>
+           <p>Details about first project</p>
+
+           <label for="start">Start date:</label>
+           <p>Start date of project</p>
+
+           <label for="end">End date:</label>
+           <p>End date of project</p>
+
+           <label for="category">Category:</label>
+           <p>category</p>
+        </div>
+     </div>
+    </body>
+</html>
+
