@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a346f9f1-9dbd-421f-a731-7e95598eadc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/static/project/CSS/createProject.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/project/css/createProject.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/project/showOne.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/crowdFunding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crowdFunding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowdFunding/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowdFunding/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowdFunding/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowdFunding/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
