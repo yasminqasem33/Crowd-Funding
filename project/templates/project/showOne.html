@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+
+{% load static %}
+
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="createProject.css">
+        <link rel="stylesheet" href="{% static 'project/CSS/createProject.css' %}">
         <title>Create Project</title>
     </head>
     <body>
@@ -54,20 +56,20 @@
         <!--display data div-->
         <div class="display">
           <div class="pt">
-            <label for="project_title">Project title:</label>
-            <p>First project</p>
+            <label for="project_title">Project title: </label>
+            <p>{{ project.title }}</p>
 
-           <label for="details">Details:</label>
-           <p>Details about first project</p>
+           <label for="details">Details:  </label>
+           <p>{{ project.details}}</p>
 
            <label for="start">Start date:</label>
-           <p>Start date of project</p>
+           <p>{{ project.start_date}}</p>
 
            <label for="end">End date:</label>
-           <p>End date of project</p>
+           <p>{{ project.end_date}}</p>
 
            <label for="category">Category:</label>
-           <p>category</p>
+           <p>{{ project.category.name}}</p>
         </div>
      </div>
       </div>
