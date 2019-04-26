@@ -6,7 +6,7 @@ from .models import *
 
 # Create your views here.
 def category(request,id):
-    category = Category.objects.get(id=id)
+    category = Category.object.get(id=id)
     projects = Project.objects.all().filter(category=category)
     return render(request, 'project/category.html', {"category": category, "projects":projects})
 
