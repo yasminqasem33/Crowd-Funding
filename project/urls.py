@@ -6,6 +6,7 @@ urlpatterns = [
     path('<int:id>', views.showOne, name='show_project'),
     path('<int:id>/donatation', views.addDonate, name='add_donation'),
     path('<int:id>/reportPro', views.report_pro, name='report_pro'),
-    path('<int:id>/reportCom', views.report_com, name='report_com')
+    path('<int:id>/reportCom', views.report_com, name='report_com'),
+    path('<int:id>/cancel', views.cancel_pro, name='cancel_pro'),
 
 ]

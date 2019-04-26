@@ -10,7 +10,10 @@
     <body>
       <!--display data div-->
 
-            <H1>{{ project.title }}</H1>
+            <H1 style="display:inline">{{ project.title }}</H1> &nbsp; &nbsp;
+      <p style="display:inline">rate</p> &nbsp; &nbsp; &nbsp;
+      <a href="{% url 'cancel_pro' project.id %}">cancel</a>
+<br>
 
            <h2 for="details" style="display:inline">Details:  </h2>
            <p >{{ project.details}}</p>

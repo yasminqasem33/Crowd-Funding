@@ -27,6 +27,8 @@ def showOne(request,id):
     if request.method == 'POST':
         comment = Form_comment(request.POST)
         donation = Form_donation(request.POST)
+        report_pro = Form_reportProject()
+        report_com = Form_reportComment()
         if comment.is_valid():
             print("valid")
         comment_obj = Comment()
@@ -70,7 +72,7 @@ def addDonate(request,id):
                 donation_obj.donation = request.POST['donation']
                 donation_obj.save()
             else:
-                messages.error(request, 'Project reach the total target')
+                messages.error(request, 'By this donation Project  will overlap the total target')
             return redirect('show_project', id=id)
 
 
@@ -99,6 +101,12 @@ def report_com(request,id):
             report_com_obj.save()
 
         return redirect('show_project', id=id)
+def cancel_pro(request,id):
+    totaltarget = Project.objects.values_list('total_target').get(id=id)[0]
+
+    if calcDontion(id) < totaltarget/4:
+        Project.objects.get(id=id).delete()
+    #handling redirect to userhome
 
 def calcDontion(id):
     sum=0
