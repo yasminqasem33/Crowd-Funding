@@ -32,6 +32,7 @@ class Report_comment(models.Model):
     text = models.CharField(max_length=1000)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     comment = models.ForeignKey(Comment,on_delete=models.CASCADE)
+    project = models.ForeignKey(Project,on_delete=models.CASCADE)
 
 
 class Report_project(models.Model):
