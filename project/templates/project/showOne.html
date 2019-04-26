@@ -5,58 +5,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="{% static 'project/CSS/createProject.css' %}">
-        <title>Create Project</title>
+        <!--<link rel="stylesheet" href="{% static 'project/CSS/showOne.css' %}">-->
     </head>
     <body>
-      <div class="cont">
-        <div class="container">
-        <form action="/action_page.php">
-            <div class="row">
-            <div class="col-25">
-                <label for="donate">Donate:</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="donate" name="donate" placeholder="Your donation..">
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-25">
-                <label for="rate">Your rating</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="rating" name="rating" placeholder="Your rating..">
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-25">
-                <label for="comment">Comment</label>
-            </div>
-            <div class="col-75">
-                <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
-            </div>
-            </div>
-            <div class="row">
-            <input type="submit" value="Submit">
-            </div>
-        </form>
-
-           <!--End of the form-->
-           <button class="cancel">CancelProject</button>
-
-           <!--div href start-->
-           <div class="links">
-             <a href="#" class="report">Report project</a>
-             <a href="#">Report comment</a>
-           </div>
-        </div>
-
-
-        <!--display data div-->
-        <div class="display">
-          <div class="pt">
-            <label for="project_title">Project title: </label>
+      <!--display data div-->
+        <
+            <label for="project_title"> Project title: </label>
             <p>{{ project.title }}</p>
 
            <label for="details">Details:  </label>
@@ -70,9 +24,22 @@
 
            <label for="category">Category:</label>
            <p>{{ project.category.name}}</p>
-        </div>
-     </div>
-      </div>
+
+      <form method="POST"> {% csrf_token %}
+
+{{ form1.as_p }}
+    <input type="submit" value="add comment">
+</form>
+      <form method="POST"> {% csrf_token %}
+
+{{ form2.as_p }}
+    <input type="submit" value="add donation">
+</form>
+
+
+
+
+
     </body>
 </html>
 
