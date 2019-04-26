@@ -12,7 +12,7 @@ def list_cates(request):
     for category in categories:
         categories_names.append(category.name)
         print(category.name)
-    return render(request, 'project/list_cates', {"categories": categories})
+    return render(request, 'project/list_cates.html', {"categories_names": categories_names})
 
 def showOne(request,id):
     project = Project.objects.get(id=id)
