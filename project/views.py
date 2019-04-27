@@ -2,6 +2,8 @@ from django.shortcuts import *
 from .forms import *
 from .models import *
 from django.contrib import messages
+from django.forms import modelformset_factory
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -117,3 +119,61 @@ def calcDontion(id):
        return sum
     except Comment.DoesNotExist:
        return 0
+def new(request):
+
+    ImageFormSet = modelformset_factory(Images,
+                                        form=ImageForm)
+    if request.method == 'POST':
+        Projectobj = Project()
+        formPro =Form_Project(request.POST)
+        formset = ImageFormSet(request.POST, request.FILES,
+                               queryset=Images.objects.none())
+        print(formset)
+        if formPro.is_valid() and formset.is_valid():
+            # formPro = formPro.save(commit=False)
+            # formPro.start_date=request['start_date']
+            # formPro.end_date=request['end_date']
+            Projectobj.title=request.POST['title']
+            Projectobj.details=request.POST['details']
+            Projectobj.total_target=request.POST['total_target']
+            Projectobj.user_id = 1
+            Projectobj.save()
+
+            for form in formset.cleaned_data:
+                 if form:
+
+                    image = form['image']
+                    photo = Images()
+                    photo.image=image
+                    photo.project= Projectobj
+                    photo.save()
+                # if form:
+                #     image = form['image']
+                #     photo = Images(project=Projectobj, image=image)
+                #     photo.save()
+            messages.success(request,
+                             "Yeeew, check it out on the home page!")
+            # return HttpResponseRedirect("/projects/<")
+            return redirect('show_project', id=Projectobj.id)
+
+        else:
+            print(formPro.errors, formset.errors)
+    else:
+        formPro = Form_Project()
+        formset = ImageFormSet()
+    return render(request, 'project/new.html',
+                  {'formPro': formPro, 'formset': formset})
+    #=====================================
+    # ImageFormSet = modelformset_factory(Images,
+    #                                     form=ImageForm)
+    # print(Category.objects.values_list('name').all)
+    # formPro = Form_roject(request.POST)
+    #
+    #
+    #
+    # formset = ImageFormSet(queryset=Images.objects.none())
+    # return render(request, 'project/new.html',
+    #               {'formPro': formPro, 'formset': formset})
+    # return render(request, 'project/new.html', {"formPro": formPro})
+
+    pass
