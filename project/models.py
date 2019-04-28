@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 def get_image_filename(instance, filename):
     title = instance.project.title
     slug = slugify(title)
-    return "post_images/%s-%s" % (slug, filename)
+    return "./project/static/project/Images/project_images/%s-%s" % (slug, filename)
 class Category(models.Model):
     name = models.CharField(max_length=100 )
 
