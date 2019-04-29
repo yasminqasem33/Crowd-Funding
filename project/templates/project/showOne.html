@@ -1,64 +1,105 @@
-
 {% load static %}
 
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <!--<link rel="stylesheet" href="{% static 'project/CSS/showOne.css' %}">-->
-    </head>
-    <body>
-      <!--display data div-->
-
-            <H1 style="display:inline">{{ project.title }}</H1> &nbsp; &nbsp;
-      <p style="display:inline">rate</p> &nbsp; &nbsp; &nbsp;
-      <a href="{% url 'cancel_pro' project.id %}">cancel</a>
-<br>
-
-           <h2 for="details" style="display:inline">Details:  </h2>
-           <p >{{ project.details}}</p>
-
-           <h2 for="start" style="display:inline">Start date:</h2>
-           <p >{{ project.start_date}}</p>
-
-           <h2 for="end" style="display:inline">End date:</h2>
-           <p >{{ project.end_date}}</p>
-
-           <h2 for="category" style="display:inline">Category:</h2>
-           <p >{{ project.category.name}}</p>
-            <a href="#" onclick="addReportPro()">report</a>
-           <form action="{% url 'add_donation' project.id %}"  method="POST">  {% csrf_token %}
-
-{{ form2.as_p }}
-   {% for message in messages %}
-
-                    <div class="alert alert-success">
-                        <a class="close" href="#" data-dismiss="alert">×</a>
-
-                        {{ message }}
-
-                    </div>
-            {% endfor %}    <input type="submit" value="add donation">
-</form>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'project/CSS/showOne.css' %}">
+    <style>
 
 
-      <form method="POST"> {% csrf_token %}
 
-       {{ form1.as_p }}
-     <input type="submit" value="add comment">
-     </form >
 
-{% for c in comments %}
+    </style>
+</head>
+<body>
+<!--start of container-->
+<div class="container">
+    <!--display data div-->
+    <div class="header">
+        <H1 style="display:inline">{{ project.title }}</H1> &nbsp; &nbsp;
+    </div>
+    <br>
 
-<h1> {{ c.user.first_name }} </h1>
-<p style="display:inline"> {{ c.text }} </p>
-     &nbsp; <a href="#" onclick="addReportCom()">report</a>
 
-<input type="hidden" id=cId name={{ c.id }}>
+    <p style="display:inline">rate</p> &nbsp; &nbsp; &nbsp;
+    <a href="{% url 'cancel_pro' project.id %}">cancel</a>
+    <br>
 
-{% endfor %}
+    <h2 for="details" style="display:inline">Details: </h2>
+    <div class="details">
+        <p>{{ project.details}}</p>
+    </div>
 
-<div id="report" style=" width: 100%;
+
+    <h2 for="start" style="display:inline">Start date:</h2>
+    <div class="start">
+        <p>{{ project.start_date}}</p>
+    </div>
+
+    <h2 for="end" style="display:inline">End date:</h2>
+    <div class="end">
+        <p>{{ project.end_date}}</p>
+    </div>
+
+    <h2 for="category" style="display:inline">Category:</h2>
+    <div class="cat">
+        <p>{{ project.category.name}}</p>
+    </div>
+
+
+    <!--div report project-->
+    <div class="reportProject">
+        <a href="#" onclick="addReportPro()">report Project</a>
+    </div>
+
+    <!--reportProject-->
+    <div class="donateForm">
+        <form action="{% url 'add_donation' project.id %}" method="POST"> {% csrf_token %}
+
+            {{ form2.as_p }}
+            {% for message in messages %}
+
+            <div class="alert alert-success">
+                <a class="close" href="#" data-dismiss="alert">×</a>
+
+                {{ message }}
+
+            </div>
+            {% endfor %}
+            <div class="add_don">
+                <input type="submit" value="add donation">
+            </div>
+        </form>
+    </div>
+
+
+    <form method="POST"> {% csrf_token %}
+
+        {{ form1.as_p }}
+        <input type="submit" value="add comment">
+    </form>
+
+    {% for c in comments %}
+
+    <h1> {{ c.user.first_name }} </h1>
+
+    <!--text area div-->
+    <div class="txt_area">
+        <p style="display:inline"> {{ c.text }} </p>
+    </div>
+
+
+    <!--div report comment-->
+    <div class="report_com">
+        &nbsp; <a href="#" onclick="addReportCom()">report Comment</a>
+    </div>
+
+    <input type="hidden" id=cId name={{ c.id }}>
+
+    {% endfor %}
+    <div class="rep">
+        <div id="report" style=" width: 100%;
     padding: 50px 0;
     text-align: center;
     background-color: lightblue;
@@ -67,16 +108,17 @@
     width: 500px;
     height: 300px;
     margin-left: 100px;">
-    <p>what are resons for report?</p>
-    <form action="{% url 'report_pro' project.id %}"  method="POST">  {% csrf_token %}
+            <p>what are reasons for report?</p>
+            <form action="{% url 'report_pro' project.id %}" method="POST"> {% csrf_token %}
 
-    {{ form3.as_p }}
-        <input type="submit" value="Report">
-    </form>
-    <button onclick="addReport()"> close </button>
+                {{ form3.as_p }}
+                <input type="submit" value="Report">
+            </form>
+            <button onclick="addReport()"> close</button>
 
-</div>
-      <div id="comment" style=" width: 100%;
+        </div>
+
+        <div id="comment" style=" width: 100%;
     padding: 50px 0;
     text-align: center;
     background-color: lightblue;
@@ -85,19 +127,25 @@
     width: 300px;
     height: 300px;
     margin-left: 100px;">
-    <p>what are resons for report?</p>
-    <form action="{% url 'report_com' project.id %}"  method="POST">  {% csrf_token %}
+            <p>what are reasons for report?</p>
+            <form action="{% url 'report_com' project.id %}" method="POST"> {% csrf_token %}
 
-    {{ form4.as_p }}
-        <input type="hidden" id=comId name="comId">
+                {{ form4.as_p }}
+                <input type="hidden" id=comId name="comId">
 
-        <input type="submit" value="Report">
-    </form>
-    <button onclick="addReportCom()"> close </button>
+                <input type="submit" value="Report">
+            </form>
+            <button onclick="addReportCom()"> close</button>
 
+        </div>
+
+    </div>
+
+
+    <!--end of container div-->
 </div>
-    <script src="{% static 'project/JavaScript/showOne.js' %}"></script>
+<script src="{% static 'project/JavaScript/showOne.js' %}"></script>
 
-    </body>
+</body>
 </html>
 
