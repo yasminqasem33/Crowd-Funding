@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms'
 
 ]
+CRISPY_TEMPLATE_PACK='bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,4 +134,5 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 

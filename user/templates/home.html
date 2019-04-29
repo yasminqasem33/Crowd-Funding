@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>home page </h1>
+  
   {% if user.is_authenticated %}
-  <p>welcome {{user.username}}</p>
-  <img src="{{ user.userprofile.image.url }}" width="240">
+  <h1>Welcome {{user.username}} Have Fun In Our Website</h1>
     {% else %}
+    <h1>Welcome To Crowd-Funding You Need To SignUp To Access Website  </h1>
     {% endif %}
-  <h2>welcome to my site</h2>
 {% endblock %}
 
