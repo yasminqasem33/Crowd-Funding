@@ -1,14 +1,16 @@
+from django.contrib.auth.models import User
 from django.db import models
 
+import datetime
 
-class User(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+class UserProfile(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
     phone = models.BigIntegerField()
-    birth_date = models.DateField()
+    birth_date = models.DateField(default="YYYY-MM-DD")
     country = models.CharField(max_length=100)
     facebook_profile = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='user/images/%Y/%m/%d/')
+    image = models.ImageField(upload_to='profile_image',blank=True)
 
-# Create your models here.
+    
+
+
