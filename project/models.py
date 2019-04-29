@@ -15,12 +15,12 @@ class Category(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=100)
     details = models.CharField(max_length=1000)
-    total_target = models.BigIntegerField()
-    # featured = models.BooleanField()
-    # start_date = models.DateField()
-    # end_date = models.DateField()
+    total_target = models.BigIntegerField(null=True)
+    featured = models.BooleanField(default=False)
+    start_date = models.DateField(null=True)
+    end_date = models.DateField(null=True)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,null=True)
 
 
 class Comment(models.Model):
@@ -29,9 +29,6 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-# class Picture(models.Model):
-#     project = models.ForeignKey(Project,on_delete=models.CASCADE)
-#     picture = models.ImageField(upload_to='project/images/%Y/%m/%d/')
 
 class Images(models.Model):
     project = models.ForeignKey(Project, default=None,on_delete=models.CASCADE)
@@ -44,10 +41,7 @@ class Report_comment (models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     comment = models.ForeignKey(Comment,on_delete=models.CASCADE)
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
-def get_image_filename(instance, filename):
-    title = instance.post.title
-    slug = slugify(title)
-    return "post_images/%s-%s" % (slug, filename)
+
 
 
 

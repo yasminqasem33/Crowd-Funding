@@ -130,12 +130,18 @@ def new(request):
         form_tags = TagForm(request.POST)
         print(formset)
         if formPro.is_valid() and formset.is_valid() and form_tags.is_valid():
-            # formPro = formPro.save(commit=False)
-            # formPro.start_date=request['start_date']
-            # formPro.end_date=request['end_date']
+            ###################################################
+            print ("caaat"+request.POST['category'])
+            # category=Category.objects.filter(name=request.POST['category'])
+            print (request.POST['end_date'])
+########################################################################################3
+
             Projectobj.title=request.POST['title']
             Projectobj.details=request.POST['details']
             Projectobj.total_target=request.POST['total_target']
+            formPro.category_id = request.POST['category']
+            formPro.start_date = request.POST['start_date']
+            formPro.end_date = request.POST['end_date']
             # Projectobj.user_id = 1
             Projectobj.save()
             tags_Sent = request.POST['tag']

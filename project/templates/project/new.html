@@ -12,9 +12,13 @@
     {% for hidden in formpro.hidden_fields %}
         {{ hidden }}
     {% endfor %}
+      <!--{% for cat in category %}-->
+        <!--{{ cat }} <br />-->
 
+    <!--{% endfor %}-->
     {% for field in formPro %}
         {{ field }} <br />
+
     {% endfor %}
    {{ formset.management_form }}
     {% for form in formset %}
