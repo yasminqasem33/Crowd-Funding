@@ -19,7 +19,7 @@ class Project(models.Model):
     # featured = models.BooleanField()
     # start_date = models.DateField()
     # end_date = models.DateField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     # category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
@@ -62,7 +62,7 @@ class Donation(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
 
 class Tag(models.Model):
-    name = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100)
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
 
 class Rate(models.Model):

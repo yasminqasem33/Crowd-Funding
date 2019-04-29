@@ -24,7 +24,13 @@ class Form_Project(forms.Form):
         fields = ('title', 'details','total_target','start_date' ,'end_date',)
 
 class ImageForm(forms.ModelForm):
-    image = forms.ImageField(label='Image')
+    image = forms.ImageField(label='Image',required=False)
     class Meta:
         model = models.Images
         fields = ('image', )
+
+class TagForm(forms.ModelForm):
+    tag = forms.CharField(label='Tag')
+    class Meta:
+        model =models.Tag
+        fields = ('tag', )
