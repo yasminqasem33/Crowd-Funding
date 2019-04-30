@@ -2,10 +2,61 @@ from django.shortcuts import render
 from .models import Project
 from .forms import *
 from .models import *
-
+import collections
+import operator
 
 
 # Create your views here.
+def avg_rate(id):
+    mkm = 1
+    total_rate = 0
+    rates = Rate.objects.all().filter(project=id)
+    for rate in rates:
+        total_rate = (total_rate + rate.rate)
+    if len(rates) == 0:
+        total_rate = total_rate / mkm
+    else:
+        total_rate = total_rate / len(rates)
+    return total_rate
+
+
+def home(request):
+    projects_avg_rate = {}
+    projects_avg_rate2 = {}
+    highly_rated = []
+    key = []
+    value = []
+    projects = Project.objects.all()
+    for project in projects:
+        key.append(project.id)
+        value.append(avg_rate(project.id))
+    projects_avg_rate = dict(zip(key, value))
+    print(projects_avg_rate)
+    print("data")
+    # to sort the dict by value
+    sorted_d = sorted(projects_avg_rate.items(), key=operator.itemgetter(0))
+    # to convert the list of tuple into dict
+    for a, b in sorted_d:
+        projects_avg_rate2.setdefault(a, b)
+    print(projects_avg_rate2)
+    print(sorted_d)
+    for i in projects_avg_rate.keys():
+        highly_rated.append(Picture.objects.all().filter(project=i)[0])
+    for i in highly_rated:
+        print(i.picture)
+    print(highly_rated)
+    print("highly_rated")
+
+
+
+    latest_projects = Project.objects.all().order_by('-start_date')
+    featured_projects = Project.objects.all().filter(featured=True).order_by('-start_date')
+    print(featured_projects[0].title)
+    rate = Rate.objects.all().filter(project=1)
+    print("rate")
+    print(rate[0])
+    return render(request, 'project/home.html', {"featured_projects": featured_projects, "latest_projects":latest_projects, "highly_rated":highly_rated})
+
 def category(request,id):
     category = Category.object.get(id=id)
     projects = Project.objects.all().filter(category=category)

@@ -53,3 +53,6 @@ class Rate(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
 
+    def __int__(self):
+        return self.project
+
