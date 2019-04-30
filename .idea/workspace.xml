@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a346f9f1-9dbd-421f-a731-7e95598eadc5" name="Default Changelist" comment="">
 <<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/django.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/django.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       <change afterPath="$PROJECT_DIR$/project/templates/project/category.html" afterDir="false" />
@@ -14,6 +18,7 @@
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
       <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +53,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/views.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="75">
+=======
             <state relative-caret-position="331">
               <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
               <folding>
@@ -70,6 +78,7 @@
         <entry file="file://$PROJECT_DIR$/project/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
               <caret line="8" column="25" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="25" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
               <folding>
@@ -81,16 +90,38 @@
       </file>
 <<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
+=======
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/lab/lib64/python3.6/site-packages/django/utils/autoreload.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="149">
               <caret line="301" selection-start-line="301" selection-end-line="301" />
 =======
       <file pinned="false" current-in-tab="true">
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
         <entry file="file://$PROJECT_DIR$/project/templates/project/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crowdFunding/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../python/libraries/libraries/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="77" selection-start-line="77" selection-end-line="82" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -104,8 +135,12 @@
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
 =======
             <state relative-caret-position="165">
+<<<<<<< HEAD
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+=======
               <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
             </state>
           </provider>
         </entry>
@@ -128,6 +163,9 @@
         <entry file="file://$PROJECT_DIR$/project/templates/project/showOne.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+            <state relative-caret-position="30">
+=======
+<<<<<<< HEAD
             <state relative-caret-position="450">
               <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
@@ -145,6 +183,7 @@
               <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
 =======
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
               <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
               <folding>
@@ -159,12 +198,17 @@
         <entry file="file://$PROJECT_DIR$/project/models.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+            <state relative-caret-position="255">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+=======
+<<<<<<< HEAD
             <state relative-caret-position="302">
               <caret line="23" column="8" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="8" />
 =======
             <state relative-caret-position="185">
               <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -287,7 +331,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project_django/django project" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -343,6 +387,9 @@
     <editor active="true" />
     <layout>
 <<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21236959" />
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24787685" />
 =======
@@ -351,21 +398,30 @@
 =======
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20342772" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5168142" />
+=======
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21090908" />
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
 <<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21238938" />
+=======
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.34666666" />
 =======
       <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38230088" />
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -414,21 +470,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/templates/project/showOne.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180" />
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/crowdFunding/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -459,6 +507,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-206">
 =======
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -469,6 +518,9 @@
     <entry file="file://$PROJECT_DIR$/project/views.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+        <state relative-caret-position="75">
+=======
+<<<<<<< HEAD
         <state relative-caret-position="45">
           <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
@@ -476,6 +528,7 @@
             <element signature="e#636#668#0" expanded="true" />
 =======
         <state relative-caret-position="65">
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
           <caret line="8" column="25" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -484,6 +537,18 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/project/templates/project/list_cates.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdFunding/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/project/forms.py">
@@ -504,9 +569,10 @@
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
 >>>>>>> a57b60163bf34ea87c355335422e361e0a3ca943
 =======
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
     <entry file="file://$PROJECT_DIR$/project/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="30">
           <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
           <folding>
@@ -515,8 +581,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/templates/project/list_cates.html">
+    <entry file="file://$PROJECT_DIR$/project/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="255">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="331">
@@ -532,6 +605,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
         </state>
       </provider>
     </entry>
@@ -543,6 +617,24 @@
 =======
     <entry file="file://$PROJECT_DIR$/project/templates/project/category.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="210">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdFunding/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python/libraries/libraries/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="77" selection-start-line="77" selection-end-line="82" selection-end-column="1" />
+=======
         <state relative-caret-position="165">
 <<<<<<< HEAD
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
@@ -550,6 +642,7 @@
 =======
           <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
 >>>>>>> af8a0e9984ee39df56072c950d110079ad70e64e
+>>>>>>> 8c3b68387dd32c67d36ff79d7c544b5da4393306
         </state>
       </provider>
     </entry>
