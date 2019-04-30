@@ -3,6 +3,9 @@ from .forms import *
 from .models import *
 from django.contrib import messages
 from django.forms import modelformset_factory
+import datetime
+
+format_str = '%Y-%m-%d'
 
 
 def category(request,id):
@@ -131,7 +134,7 @@ def new(request):
         print(formset)
         if formPro.is_valid() and formset.is_valid() and form_tags.is_valid():
             ###################################################
-            print ("caaat"+request.POST['category'])
+            print (type(int(request.POST['category'])))
             # category=Category.objects.filter(name=request.POST['category'])
             print (request.POST['end_date'])
 ########################################################################################3
@@ -139,7 +142,7 @@ def new(request):
             Projectobj.title=request.POST['title']
             Projectobj.details=request.POST['details']
             Projectobj.total_target=request.POST['total_target']
-            formPro.category_id = request.POST['category']
+            formPro.category_id =int(request.POST['category'])
             formPro.start_date = request.POST['start_date']
             formPro.end_date = request.POST['end_date']
             # Projectobj.user_id = 1
