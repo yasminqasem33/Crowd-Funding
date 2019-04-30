@@ -2,9 +2,9 @@ from django.shortcuts import *
 from .forms import *
 from .models import *
 from django.contrib import messages
+from django.forms import modelformset_factory
 
 
-# Create your views here.
 def category(request,id):
     category = Category.object.get(id=id)
     projects = Project.objects.all().filter(category=category)
@@ -117,3 +117,65 @@ def calcDontion(id):
        return sum
     except Comment.DoesNotExist:
        return 0
+def new(request):
+
+
+    ImageFormSet = modelformset_factory(Images,
+                                        form=ImageForm)
+    if request.method == 'POST':
+        Projectobj = Project()
+        formPro =Form_Project(request.POST)
+        formset = ImageFormSet(request.POST, request.FILES,
+                               queryset=Images.objects.none())
+        form_tags = TagForm(request.POST)
+        print(formset)
+        if formPro.is_valid() and formset.is_valid() and form_tags.is_valid():
+            ###################################################
+            print ("caaat"+request.POST['category'])
+            # category=Category.objects.filter(name=request.POST['category'])
+            print (request.POST['end_date'])
+########################################################################################3
+
+            Projectobj.title=request.POST['title']
+            Projectobj.details=request.POST['details']
+            Projectobj.total_target=request.POST['total_target']
+            formPro.category_id = request.POST['category']
+            formPro.start_date = request.POST['start_date']
+            formPro.end_date = request.POST['end_date']
+            # Projectobj.user_id = 1
+            Projectobj.save()
+            tags_Sent = request.POST['tag']
+            tags = tags_Sent.split()
+            print (tags)
+
+            for tag in tags:
+                tag_obj = Tag()
+                tag_obj.tag = tag
+                tag_obj.project= Projectobj
+                tag_obj.save()
+
+            for form in formset.cleaned_data:
+                if form:
+                    image = form['image']
+                    print (image)
+                    if image != None:
+
+                        photo = Images()
+                        photo.image=image
+                        photo.project= Projectobj
+                        photo.save()
+
+
+            return redirect('show_project', id=Projectobj.id)
+
+        else:
+            print(formPro.errors, formset.errors)
+    else:
+        formPro = Form_Project()
+        formset = ImageFormSet()
+        form_tags= TagForm()
+    return render(request, 'project/new.html',
+                  {'formPro': formPro, 'formset': formset, 'form_tags': form_tags})
+
+
+    pass
