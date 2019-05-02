@@ -1,75 +1,142 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="createProject.css">
-        <title>Create Project</title>
-    </head>
-    <body>
-      <div class="cont">
-        <div class="container">
-        <form action="/action_page.php">
-            <div class="row">
-            <div class="col-25">
-                <label for="donate">Donate:</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="donate" name="donate" placeholder="Your donation..">
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-25">
-                <label for="rate">Your rating</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="rating" name="rating" placeholder="Your rating..">
-            </div>
-            </div>
+<!--{% extends 'project/nav.html' %}-->
+<!--{% load static %}-->
 
-            <div class="row">
-            <div class="col-25">
-                <label for="comment">Comment</label>
+<!--{% block nav_bar %} {% endblock %}-->
+<!--start of container-->
+<html>
+<body>
+<div class="container">
+    <!--display data div-->
+    <div class="header">
+        <H1 style="display:inline">{{ project.title }}</H1> &nbsp; &nbsp;
+    </div>
+    <br>
+
+
+    <p style="display:inline">rate</p> &nbsp; &nbsp; &nbsp;
+    <a href="{% url 'cancel_pro' project.id %}">cancel</a>
+    <br>
+
+    <h2 for="details" style="display:inline">Details: </h2>
+    <div class="details">
+        <p>{{ project.details}}</p>
+    </div>
+
+
+    <h2 for="start" style="display:inline">Start date:</h2>
+    <div class="start">
+        <p>{{ project.start_date}}</p>
+    </div>
+
+    <h2 for="end" style="display:inline">End date:</h2>
+    <div class="end">
+        <p>{{ project.end_date}}</p>
+    </div>
+
+    <h2 for="category" style="display:inline">Category:</h2>
+    <div class="cat">
+        <p>{{ project.category.name}}</p>
+    </div>
+
+
+    <!--div report project-->
+    <div class="reportProject">
+        <a href="#" onclick="addReportPro()">report Project</a>
+    </div>
+
+    <!--reportProject-->
+    <div class="donateForm">
+        <form action="{% url 'add_donation' project.id %}" method="POST"> {% csrf_token %}
+
+            {{ form2.as_p }}
+            {% for message in messages %}
+
+            <div class="alert alert-success">
+                <a class="close" href="#" data-dismiss="alert">×</a>
+
+                {{ message }}
+
             </div>
-            <div class="col-75">
-                <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
-            </div>
-            </div>
-            <div class="row">
-            <input type="submit" value="Submit">
+            {% endfor %}
+            <div class="add_don">
+                <input type="submit" value="add donation">
             </div>
         </form>
+    </div>
 
-           <!--End of the form-->
-           <button class="cancel">CancelProject</button>
 
-           <!--div href start-->
-           <div class="links">
-             <a href="#" class="report">Report project</a>
-             <a href="#">Report comment</a>
-           </div>
+    <form method="POST"> {% csrf_token %}
+
+        {{ form1.as_p }}
+        <input type="submit" value="add comment">
+    </form>
+
+    {% for c in comments %}
+
+    <h1> {{ c.user.first_name }} </h1>
+
+    <!--text area div-->
+    <div class="txt_area">
+        <p style="display:inline"> {{ c.text }} </p>
+    </div>
+
+
+    <!--div report comment-->
+    <div class="report_com">
+        &nbsp; <a href="#" onclick="addReportCom()">report Comment</a>
+    </div>
+
+    <input type="hidden" id=cId name={{ c.id }}>
+
+    {% endfor %}
+    <div class="rep">
+        <div id="report" style=" width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    display: none;
+    width: 500px;
+    height: 300px;
+    margin-left: 100px;">
+            <p>what are reasons for report?</p>
+            <form action="{% url 'report_pro' project.id %}" method="POST"> {% csrf_token %}
+
+                {{ form3.as_p }}
+                <input type="submit" value="Report">
+            </form>
+            <button onclick="addReport()"> close</button>
+
         </div>
 
+        <div id="comment" style=" width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    display: none;
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;">
+            <p>what are reasons for report?</p>
+            <form action="{% url 'report_com' project.id %}" method="POST"> {% csrf_token %}
 
-        <!--display data div-->
-        <div class="display">
-          <div class="pt">
-            <label for="project_title">Project title:</label>
-            <p>First project</p>
+                {{ form4.as_p }}
+                <input type="hidden" id=comId name="comId">
 
-           <label for="details">Details:</label>
-           <p>Details about first project</p>
+                <input type="submit" value="Report">
+            </form>
+            <button onclick="addReportCom()"> close</button>
 
-           <label for="start">Start date:</label>
-           <p>Start date of project</p>
-
-           <label for="end">End date:</label>
-           <p>End date of project</p>
-
-           <label for="category">Category:</label>
-           <p>category</p>
         </div>
-     </div>
-    </body>
+
+    </div>
+
+
+    <!--end of container div-->
+</div>
+</body>
 </html>
+
+
 
